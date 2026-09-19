@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User account profile and saved preferences",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "tonePreference": { "type": "string" }
+      },
+      "required": ["uid", "email", "displayName"]
+    },
+    "MeetingSession": {
+      "title": "MeetingSession",
+      "description": "Saved meeting sessions with transcripts, real-time summaries, and action items",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string", "maxLength": 150 },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "status": { "type": "string", "enum": ["active", "ended"] },
+        "executiveSummary": { "type": "string" },
+        "keyPoints": { "type": "array" },
+        "decisions": { "type": "array" },
+        "actionItems": { "type": "array" },
+        "sentiment": { "type": "string" },
+        "transcriptCount": { "type": "number" }
+      },
+      "required": ["id", "userId", "title", "createdAt", "updatedAt", "status"]
+    },
+    "TranscriptEntry": {
+      "title": "TranscriptEntry",
+      "description": "Real-time speech or gesture transcription entries in a meeting",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "meetingId": { "type": "string" },
+        "userId": { "type": "string" },
+        "speaker": { "type": "string" },
+        "text": { "type": "string", "maxLength": 2000 },
+        "type": { "type": "string", "enum": ["speech", "gesture", "macro"] },
+        "timestamp": { "type": "string" },
+        "sentiment": { "type": "string" }
+      },
+      "required": ["id", "meetingId", "userId", "speaker", "text", "type", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "User profile documents keyed by Auth UID"
+    },
+    "/users/{userId}/meetings/{meetingId}": {
+      "schema": { "$ref": "#/entities/MeetingSession" },
+      "description": "User's meeting archives and live session metadata"
+    },
+    "/users/{userId}/meetings/{meetingId}/transcripts/{transcriptId}": {
+      "schema": { "$ref": "#/entities/TranscriptEntry" },
+      "description": "Chronological speech and gesture transcript logs for a meeting"
+    }
+  }
+}

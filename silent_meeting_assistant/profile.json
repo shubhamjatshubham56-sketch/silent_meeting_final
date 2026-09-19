@@ -1,0 +1,8 @@
+{
+    "name": "Alex Morgan",
+    "job_title": "Staff AI Systems Architect",
+    "status": "Available / On Silent Mode",
+    "team": "Engineering & Innovation",
+    "template": "👋 Hello everyone! I'm {name}, {job_title} ({team}). Status: {status} at {time}.",
+    "master_gesture": "call_me"
+}

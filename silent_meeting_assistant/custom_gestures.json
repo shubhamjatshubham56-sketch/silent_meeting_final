@@ -1,0 +1,65 @@
+{
+    "thumbs_up": {
+        "label": "Thumbs Up",
+        "description": "Thumb pointing straight up, fingers curled",
+        "text": "I agree / Yes 👍",
+        "category": "Agreement",
+        "enabled": true,
+        "cooldown": 2.0,
+        "badge_color": "#10B981"
+    },
+    "open_palm": {
+        "label": "Open Palm",
+        "description": "All 5 fingers extended and spread facing camera",
+        "text": "Please wait / Stop ✋",
+        "category": "Attention",
+        "enabled": true,
+        "cooldown": 2.5,
+        "badge_color": "#EF4444"
+    },
+    "peace_sign": {
+        "label": "Peace Sign (V)",
+        "description": "Index & middle fingers extended upward in V shape",
+        "text": "I have a question ✌️",
+        "category": "Participation",
+        "enabled": true,
+        "cooldown": 2.0,
+        "badge_color": "#3B82F6"
+    },
+    "ok_sign": {
+        "label": "OK Sign",
+        "description": "Thumb and index tips touching in circle, others extended",
+        "text": "Understood / Sounds good 👌",
+        "category": "Agreement",
+        "enabled": true,
+        "cooldown": 2.0,
+        "badge_color": "#8B5CF6"
+    },
+    "pointing_up": {
+        "label": "Pointing Up",
+        "description": "Index finger extended up, other fingers folded",
+        "text": "Please check the screen / slides ☝️",
+        "category": "Direction",
+        "enabled": true,
+        "cooldown": 2.0,
+        "badge_color": "#F59E0B"
+    },
+    "fist": {
+        "label": "Closed Fist",
+        "description": "All fingers tightly curled into palm",
+        "text": "Muted / In active listening ✊",
+        "category": "Status",
+        "enabled": true,
+        "cooldown": 2.5,
+        "badge_color": "#6B7280"
+    },
+    "call_me": {
+        "label": "Call Me (Master Macro)",
+        "description": "Thumb and pinky extended, middle 3 curled",
+        "text": "MASTER_MACRO:INTRO_PROFILE",
+        "category": "Macro",
+        "enabled": true,
+        "cooldown": 3.0,
+        "badge_color": "#EC4899"
+    }
+}
